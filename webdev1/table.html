@@ -1,0 +1,117 @@
+<html>
+
+<head>
+    <title>Table Example</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<!-- This is an example of internal styling -->
+<!-- <style>
+    p {
+        font-weight: bold;
+        color: red;
+        background-color: yellow;
+    }
+
+    /* class example */
+    .bg-blue {
+        background-color: blue;
+        border: 3px solid yellow;
+    }
+
+    /* id example */
+    #header {
+        font-size: 20px;
+        background-color: pink;
+        border: 2px;
+    }
+</style> -->
+<!-- 1. inline styles gets the priority over internal and external styles. 
+     2. Internal styles gets the priority over external styles.
+      3. External styles gets the priority over browser default styles. -->
+
+<body>
+    <!-- This is an example of inline styling  -->
+    <h1 style="color:red;background-color: aqua;">Table Example</h1>
+    <h1 class="bg-blue">This is another heading</h1>
+    <p style="color:green;background-color: yellow;font-size: 28px;">This is a paragraph</p>
+    <p>This is my paragraph 1</p>
+    <div class="bg-blue myClass">
+        <h3>This is a h3 tag</h3>
+        <p id="header">This is my paragraph 2</p>
+    </div>
+    <div>
+        <h4 class="bg-blue">This is my heading 4</h4>
+        <span class="myClass">This is my span</span>
+    </div>
+
+        <table class="table table_bg_color_violet">
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>City</th>
+            </tr>
+            
+            <tr>
+                <td>John</td>
+                <td>25</td>
+                <td>New York</td>
+            </tr>
+            <tr>
+                <td>Jane</td>
+                <td>30</td>
+                <td>Los Angeles</td>
+            </tr>
+
+        </table>
+
+    <table class="table table_bg_color_blue">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>City</th>
+            <th>Country</th>
+        </tr>
+        <tr>
+            <td>John</td>
+            <td>25</td>
+            <td>New York</td>
+            <td>USA</td>
+        </tr>
+        <tr>
+            <td>Rob</td>
+            <td>30</td>
+            <td>Los Angeles</td>
+            <td>USA</td>
+        </tr>        
+        <tr>
+            <td>John</td>
+            <td>25</td>
+            <td>New York</td>
+            <td>USA</td>
+        </tr>
+        <tr>
+            <td>John</td>
+            <td>25</td>
+            <td>New York</td>
+            <td>USA</td>
+        </tr>
+        <tr>
+            <td>John</td>
+            <td>25</td>
+            <td>New York</td>
+            <td>USA</td>
+        </tr>
+    </table>
+
+    <iframe width="500px" height="400px" src="https://www.youtube.com/embed/MVIcrmeV_6c" 
+    title="Docker Compose Tutorial - Docker in Practice" frameborder="0" 
+    autoplay;encrypted-media;  picture-in-picture; allowfullscreen></iframe>
+    <!-- text-align, border-width, border-radius,  -->
+
+    Create a table 
+    It should have 4 columns - Name, Age, City, Country
+    Add 5 rows of data in the table.
+    Try to style your table with font-size, background-color, border etc. You can use external styling.
+</body>
+
+</html>
