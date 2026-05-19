@@ -297,7 +297,7 @@ switch (day) {
 }
 
 var x = 60;
-
+// its better to use if else statement in this case.
 switch (true) {
     case (x < 50):
         console.log("x is less than 50: " + x);
