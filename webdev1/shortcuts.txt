@@ -14,4 +14,5 @@ Cmd + R -> to reload the browser
 
 explain about branches
  // map, filter. 
-// Use Switch
+//show input validation using required
+// show how the use of !important
