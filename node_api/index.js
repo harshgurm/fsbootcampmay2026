@@ -3,6 +3,9 @@ const connection = require('./connection');
 const app = express();
 const port = 3000;
 const bcrypt = require('bcrypt');
+const cors =  require('cors');
+
+app.use(cors());
 
 app.use(express.json());
 
@@ -32,7 +35,7 @@ app.get('/customers/:id', (req, res) => {
 app.post('/customers', (req, res) => {
     const customer_name = req.body.customer_name;
     const age = req.body.age;
-    const email = req.body.email;
+    const email = req.body.customer_email;
 
     // OR
     // const { customer_name, age, email } = req.body;
@@ -78,20 +81,20 @@ app.delete('/customers/:id', (req, res) => {
 
 app.put('/customers/:id', (req, res) => {
     const customerId = req.params.id;
-    const { customer_name, age, email } = req.body;
+    const { customer_name, age, customer_email } = req.body;
 
     if (!customerId || isNaN(customerId)) {
         res.status(400).json({ error: 'Customer ID should be a number field.' });
         return;
     }
-    if (!customer_name || !email) {
-        res.status(400).json({ error: 'All fields (customer_name, email) are required for update.' });
+    if (!customer_name || !customer_email) {
+        res.status(400).json({ error: 'All fields (customer_name, customer_email) are required for update.' });
         return;
     }
 
     connection.query(`UPDATE customers 
         SET customer_name = ?,  customer_email = ? 
-        WHERE customer_id = ?`, [customer_name, age, email, customerId], (err, results) => {
+        WHERE customer_id = ?`, [customer_name, age, customer_email, customerId], (err, results) => {
         if (err) {
             console.error('Error updating customer:', err);
             res.status(500).json({ error: 'Error updating customer' });

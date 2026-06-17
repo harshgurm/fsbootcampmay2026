@@ -4,6 +4,10 @@ import { SignUp } from './sign-up/sign-up';
 import { User } from './user/user';
 import { Students } from './students/students';
 import { Home } from './home/home';
+import { Customers } from './customers/customers';
+import { CustomerDetails } from './customer-details/customer-details';
+import { AddCustomers } from './add-customers/add-customers';
+import { UpdateCustomer } from './update-customer/update-customer';
 
 export const routes: Routes = [
     {
@@ -29,6 +33,22 @@ export const routes: Routes = [
     {
         path: 'home',
         component: Home
+    },
+    {
+        path: 'customers',
+        component: Customers
+    },
+    {
+        path: 'customers/:id',
+        component: CustomerDetails
+    },
+    {
+        path: 'add-customer',
+        component: AddCustomers
+    },
+    {
+        path: 'edit-customer/:id',
+        component: UpdateCustomer
     },
     {
         path: '',
