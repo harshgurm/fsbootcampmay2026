@@ -1,7 +1,7 @@
-import { Component, effect, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CustomerInfo } from '../interfaces/customer-info';
 import { CustomerService } from '../services/customer-service';
-import { Observable } from 'rxjs';
+import { Observable, Subject, startWith, switchMap } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
@@ -12,7 +12,11 @@ import { RouterLink } from '@angular/router';
   styleUrl: './customers.css',
 })
 export class Customers {
-  customers$!: Observable<CustomerInfo[]>;
+  private readonly refreshCustomers$ = new Subject<void>();
+  customers$: Observable<CustomerInfo[]> = this.refreshCustomers$.pipe(
+    startWith(void 0),
+    switchMap(() => this.customerService.getCustomers())
+  );
   customerService = inject(CustomerService);
 
   constructor() {
@@ -34,12 +38,6 @@ export class Customers {
     //   },
     // });
 
-    //Best way of getting the data using async pipe in the template
-    effect(() => {
-      this.customers$ = this.customerService.getCustomers();
-      console.log(this.customers$);
-    });
-
   }
   
   deleteCustomer(id: number | undefined) {
@@ -48,8 +46,7 @@ export class Customers {
         next: (data) => {
           // Refresh the customers list after deletion
           console.log(data);
-          this.customers$ = this.customerService.getCustomers();
-          console.log(this.customers$);
+          this.refreshCustomers$.next();
         },
         error: (error) => {
           console.log(error);

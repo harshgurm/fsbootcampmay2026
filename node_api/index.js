@@ -93,8 +93,8 @@ app.put('/customers/:id', (req, res) => {
     }
 
     connection.query(`UPDATE customers 
-        SET customer_name = ?,  customer_email = ? 
-        WHERE customer_id = ?`, [customer_name, age, customer_email, customerId], (err, results) => {
+        SET customer_name = ?,  customer_email = ?, age = ? 
+        WHERE customer_id = ?`, [customer_name,customer_email, age, customerId], (err, results) => {
         if (err) {
             console.error('Error updating customer:', err);
             res.status(500).json({ error: 'Error updating customer' });
