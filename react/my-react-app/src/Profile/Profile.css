@@ -2,3 +2,8 @@
     width: 80px;
     height: 80px;
 }
+.profiles {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+}
