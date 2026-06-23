@@ -6,9 +6,11 @@ import './App.css'
 // bcuz it has export as default in profile.tsx 
 import List  from './UserList/List.tsx'
 import { Button } from './Button/Button.tsx'
-import Counter from './Counter/Counter.tsx'
+import Counter from './Hooks/useMemo.tsx'
 import ProfileDetails from './ProfileDetails/ProfileDetails.tsx'
 import UserList from './UserList/UserList.tsx'
+import Customers from './Customers/Customers.tsx'
+import Parent from './Hooks/UseCallback/Parent.tsx'
 
 function App() {
 
@@ -46,6 +48,8 @@ function App() {
       <Counter />
       <Button text="Submit" message="Form submitted successfully!" />
       <Button text="Cancel" message="Form cancelled successfully!" />
+      <Customers />
+      <Parent />
     </>
     //Similar to name pass the description from the parent to child.
   )
