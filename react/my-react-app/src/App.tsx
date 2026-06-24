@@ -8,8 +8,6 @@ import List  from './UserList/List.tsx'
 import { Button } from './Button/Button.tsx'
 import Counter from './Hooks/useMemo.tsx'
 import ProfileDetails from './ProfileDetails/ProfileDetails.tsx'
-import UserList from './UserList/UserList.tsx'
-import Customers from './Customers/Customers.tsx'
 import Parent from './Hooks/UseCallback/Parent.tsx'
 
 function App() {
@@ -42,13 +40,11 @@ function App() {
       {/* Rule #3 all attributes must be in camelCase, for example, the class attribute must be written as className in React.
        class is reserved in React/HTML so we need use className */}
       <div style={{ backgroundColor: 'lightgray' }} >
-        <UserList />
         <List />
       </div>
       <Counter />
       <Button text="Submit" message="Form submitted successfully!" />
       <Button text="Cancel" message="Form cancelled successfully!" />
-      <Customers />
       <Parent />
     </>
     //Similar to name pass the description from the parent to child.
