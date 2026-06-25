@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router';
 
-function CustomerDetails(){
+function CustomerDetails() {
 
-    const { id }  = useParams();
+    const { id } = useParams();
     const navigate = useNavigate();
     const [customer, setCustomer] = useState({ id: 0, name: '', email: '', phone: '', website: '' });
 
@@ -22,19 +22,18 @@ function CustomerDetails(){
         fetchCustomers();
     }, [id]);
 
-    return(
-        <div>
-            <h1>Customer Details</h1>
-            <ul>
-                <li key={customer.id}>
-                    <h2>{customer.name}</h2>
-                    <p>{customer.email}</p>
-                    <p>{customer.phone}</p>
-                    <p>{customer.website}</p>
-                </li>
-            </ul>
-            <button onClick={() => navigate('/customers')}>Back to Customers</button>
+    return (
+
+        <div className="card">
+            <div className="card-body">
+                <h4 className="card-title">{customer.name}</h4>
+                <p className="card-text">{customer.email}</p>
+                <p className="card-text">{customer.phone}</p>
+                <p className="card-text">{customer.website}</p>
+                <button className="btn btn-primary" onClick={() => navigate('/customers')}>Clear</button>
+            </div>
         </div>
+
     )
 }
 

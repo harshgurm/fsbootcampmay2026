@@ -21,9 +21,9 @@ function Customers(){
     return(
         <div>
             <h1>Customers</h1>
-            <ul>
+            <ul className="list-group">
                 {customers.map((customer) => (
-                    <li key={customer.id}>
+                    <li key={customer.id} className="list-group-item">
                         <NavLink to={`/customers/${customer.id}`}>{customer.name}</NavLink>
                     </li>
                 ))}

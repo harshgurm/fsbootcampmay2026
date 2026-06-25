@@ -1,4 +1,5 @@
 import Profile from "../Profile/Profile"
+import './UserList.css'
 
 export default function UserList() {
     const users = [
@@ -29,7 +30,7 @@ export default function UserList() {
     ];
 
     return (
-        <div>
+        <div className="profiles">
             {users.map((user, index) => (
                 <Profile
                     key={index}
@@ -40,6 +41,7 @@ export default function UserList() {
                 />
             ))}
         </div>
+
     );
 }
 
