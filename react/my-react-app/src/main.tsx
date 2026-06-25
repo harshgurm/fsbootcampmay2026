@@ -7,26 +7,35 @@ import { RouterProvider } from "react-router/dom";
 import Customers from './Customers/Customers.tsx';
 import UserList from './UserList/UserList.tsx';
 import CustomerDetails from './Customers/CustomerDetails.tsx';
+import Navbar from './Navbar/Navbar.tsx';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
-  },
-  {
-    path: "/customers/",
-    element: <Customers />,
+    element: <Navbar />,
     children: [
       {
-        path: "/customers/:id",
-        element: <CustomerDetails />,
+        path: "/home",
+        element: <App />,
       },
+      {
+        path: "/customers/",
+        element: <Customers />,
+        children: [
+          {
+            path: "/customers/:id",
+            element: <CustomerDetails />,
+          },
+        ]
+      },
+      {
+        path: "/users",
+        element: <UserList />,
+      }
     ]
   },
-  {
-    path: "/users",
-    element: <UserList />,
-  }
+
 ]);
 
 createRoot(document.getElementById('root')!).render(
