@@ -17,10 +17,26 @@ function Navbar() {
                             </NavLink>
                         </li>
                         <li className="nav-item">
+                            <NavLink className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} to="/customers/add">
+                                Add Customer
+                            </NavLink>
+                        </li>
+                        <li className="nav-item">
                             <NavLink className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} to="/users">
                                 Users
                             </NavLink>
                         </li>
+                        <li className="nav-item">
+                            <NavLink className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} to="/employees">
+                                Employees
+                            </NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} to="/departments">
+                                Departments
+                            </NavLink>
+                        </li>
+
                     </ul>
                 </div>
             </nav>

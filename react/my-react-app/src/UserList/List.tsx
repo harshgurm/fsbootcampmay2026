@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-function Customers(){
+function Customers() {
 
     const [count, setCount] = useState(9);
     const [customer, setCustomer] = useState({ id: 0, name: '', email: '', phone: '', website: '' });
@@ -23,19 +23,21 @@ function Customers(){
         fetchCustomers();
     }, [count]);
 
-    return(
+    return (
         <div>
             <h1>Customers</h1>
-            <ul>
-                    <li key={customer.id}>
-                        <h2>{customer.name}</h2>
-                        <p>{customer.email}</p>
-                        <p>{customer.phone}</p>
-                        <p>{customer.website}</p>
-                    </li>
-            </ul>
-            <button onClick={() => setCount(count + 1)}>Next Customer</button>
-            <button onClick={() => setCount(count - 1)}>Previous Customer</button>
+            <div className="card" >
+                <div className="card-body">
+                    <h4 className="card-title">{customer.name}</h4>
+                    <p className="card-text">{customer.email}</p>
+                    <p className="card-text">{customer.phone}</p>
+                    <p className="card-text">{customer.website}</p>
+                </div>
+            </div>
+            <div className="d-flex justify-content-center mt-3">
+                <button className="btn btn-primary w-25" onClick={() => setCount(count + 1)}>Next Customer</button>
+                <button className="btn btn-secondary w-25 ms-2" onClick={() => setCount(count - 1)}>Previous Customer</button>
+            </div>
         </div>
     )
 }

@@ -5,7 +5,6 @@ type ProfileDetailsProps = {
 function ProfileDetails({ children }: ProfileDetailsProps) {
     return (
         <div className="profile-details">
-            <h1>Profile Details Page</h1>
             {children}
         </div>
     )

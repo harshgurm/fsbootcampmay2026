@@ -1,15 +1,18 @@
 type ButtonProps = {
     text: string
     message: string
+    className: string
 }
 
 function handleClick(message: string) {
     alert(message)
 }
 
-export function Button({ text, message }: ButtonProps) {
+export function Button({ text, message, className }: ButtonProps) {
     return (
-        <button onClick={() => alert(message)}>{text}</button>
+        <button className={className} onClick={() => alert(message)}>
+            {text}
+        </button>
     )
 }
 

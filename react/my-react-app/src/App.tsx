@@ -4,11 +4,8 @@
 import './App.css'
 // We are directly using the Profile component in the App component,
 // bcuz it has export as default in profile.tsx 
-import List  from './UserList/List.tsx'
 import { Button } from './Button/Button.tsx'
-import Counter from './Hooks/useMemo.tsx'
 import ProfileDetails from './ProfileDetails/ProfileDetails.tsx'
-import Parent from './Hooks/UseCallback/Parent.tsx'
 
 function App() {
 
@@ -39,13 +36,10 @@ function App() {
 
       {/* Rule #3 all attributes must be in camelCase, for example, the class attribute must be written as className in React.
        class is reserved in React/HTML so we need use className */}
-      <div style={{ backgroundColor: 'lightgray' }} >
-        <List />
+      <div className="d-flex justify-content-center mt-3">
+        <Button className="btn btn-primary w-25" text="Submit" message="Form submitted successfully!" />
+        <Button className="btn btn-secondary w-25 ms-2" text="Cancel" message="Form cancelled successfully!" />
       </div>
-      <Counter />
-      <Button text="Submit" message="Form submitted successfully!" />
-      <Button text="Cancel" message="Form cancelled successfully!" />
-      <Parent />
     </>
     //Similar to name pass the description from the parent to child.
   )
