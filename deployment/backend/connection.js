@@ -15,8 +15,4 @@ con.connect(function (err) {
   console.log("Connected!");
 });
 
-// con.query("SELECT * from departments").on("result", function (row) {
-//   console.log(row);
-// });
-
 module.exports = con;
